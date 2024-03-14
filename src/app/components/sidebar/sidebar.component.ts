@@ -1,6 +1,6 @@
 // Angular.
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, NgFor, TitleCasePipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
 
 // Servicios.
 import { GifsService } from 'src/app/core/services/gifs.service';
@@ -8,22 +8,20 @@ import { GifsService } from 'src/app/core/services/gifs.service';
 
 
 @Component({
+  imports: [ NgFor, TitleCasePipe ],
   selector: 'app-sidebar',
   standalone: true,
-  imports: [ CommonModule ],
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
 
+  gifsService = inject(GifsService);
 
-  constructor(private _gifsService: GifsService) { }
-
-  get history() {
-    return this._gifsService.history;
+  get history(): Array<string> {
+    return this.gifsService.history;
   }
 
-  search(item: string) {
-    return this._gifsService.searchGif(item);
+  search(searchWord: string): void {
+    return this.gifsService.searchGif(searchWord);
   }
 }

@@ -1,26 +1,31 @@
+// Angular.
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { GifsService } from '../../../core/services/gifs.service';
+
+// Servicios.
+import { GifsService } from 'src/app/core/services/gifs.service';
+
+
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styles: [
-  ]
+    selector: 'app-search',
+    standalone: true,
+    styles: [],
+    templateUrl: './search.component.html',
 })
 export class SearchComponent {
 
   @ViewChild('txtSearch') txtSearch!:ElementRef<HTMLInputElement>;
 
-  constructor(private _gifsService: GifsService) {}
+  constructor(private gifsService: GifsService) {}
 
-  search(texto: string) {
+  search(texto: string): void {
     const gifText = this.txtSearch.nativeElement.value;
 
     if (gifText.trim().length === 0) {
       return;
     }
 
-    this._gifsService.searchGif(gifText);
+    this.gifsService.searchGif(gifText);
     this.txtSearch.nativeElement.value = '';
   }
 }
