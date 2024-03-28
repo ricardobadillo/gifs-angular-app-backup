@@ -1,117 +1,117 @@
 export interface SearchGifsResponse {
-    data:       Gif[];
-    pagination: Pagination;
-    meta:       Meta;
+  data:       Gif[];
+  meta:       Meta;
+  pagination: Pagination;
 }
 
 export interface Gif {
-    type:                       Type;
-    id:                         string;
-    url:                        string;
-    slug:                       string;
-    bitly_gif_url:              string;
-    bitly_url:                  string;
-    embed_url:                  string;
-    username:                   string;
-    source:                     string;
-    title:                      string;
-    rating:                     Rating;
-    content_url:                string;
-    source_tld:                 string;
-    source_post_url:            string;
-    is_sticker:                 number;
-    import_datetime:            Date;
-    trending_datetime:          Date;
-    images:                     Images;
-    analytics_response_payload: string;
-    analytics:                  Analytics;
+  analytics_response_payload: string;
+  analytics:                  Analytics;
+  bitly_gif_url:              string;
+  bitly_url:                  string;
+  content_url:                string;
+  embed_url:                  string;
+  id:                         string;
+  images:                     Images;
+  import_datetime:            Date;
+  is_sticker:                 number;
+  rating:                     Rating;
+  slug:                       string;
+  source_post_url:            string;
+  source_tld:                 string;
+  source:                     string;
+  title:                      string;
+  trending_datetime:          Date;
+  type:                       Type;
+  url:                        string;
+  username:                   string;
 }
 
 export interface Analytics {
-    onload:  Onclick;
-    onclick: Onclick;
-    onsent:  Onclick;
+  onclick: Onclick;
+  onload:  Onclick;
+  onsent:  Onclick;
 }
 
 export interface Onclick {
-    url: string;
+  url: string;
 }
 
 export interface Images {
-    original:                 FixedHeight;
-    downsized:                The480_WStill;
-    downsized_large:          The480_WStill;
-    downsized_medium:         The480_WStill;
-    downsized_small:          DownsizedSmall;
-    downsized_still:          The480_WStill;
-    fixed_height:             FixedHeight;
-    fixed_height_downsampled: FixedHeight;
-    fixed_height_small:       FixedHeight;
-    fixed_height_small_still: The480_WStill;
-    fixed_height_still:       The480_WStill;
-    fixed_width:              FixedHeight;
-    fixed_width_downsampled:  FixedHeight;
-    fixed_width_small:        FixedHeight;
-    fixed_width_small_still:  The480_WStill;
-    fixed_width_still:        The480_WStill;
-    looping:                  Looping;
-    original_still:           The480_WStill;
-    original_mp4:             DownsizedSmall;
-    preview:                  DownsizedSmall;
-    preview_gif:              The480_WStill;
-    preview_webp:             The480_WStill;
-    "480w_still":             The480_WStill;
+  "480w_still":             The480_WStill;
+  downsized_large:          The480_WStill;
+  downsized_medium:         The480_WStill;
+  downsized_small:          DownsizedSmall;
+  downsized_still:          The480_WStill;
+  downsized:                The480_WStill;
+  fixed_height_downsampled: FixedHeight;
+  fixed_height_small_still: The480_WStill;
+  fixed_height_small:       FixedHeight;
+  fixed_height_still:       The480_WStill;
+  fixed_height:             FixedHeight;
+  fixed_width_downsampled:  FixedHeight;
+  fixed_width_small_still:  The480_WStill;
+  fixed_width_small:        FixedHeight;
+  fixed_width_still:        The480_WStill;
+  fixed_width:              FixedHeight;
+  looping:                  Looping;
+  original_mp4:             DownsizedSmall;
+  original_still:           The480_WStill;
+  original:                 FixedHeight;
+  preview_gif:              The480_WStill;
+  preview_webp:             The480_WStill;
+  preview:                  DownsizedSmall;
 }
 
 export interface The480_WStill {
-    height: string;
-    width:  string;
-    size:   string;
-    url:    string;
+  height: string;
+  size:   string;
+  url:    string;
+  width:  string;
 }
 
 export interface DownsizedSmall {
-    height:   string;
-    width:    string;
-    mp4_size: string;
-    mp4:      string;
+  height:   string;
+  mp4_size: string;
+  mp4:      string;
+  width:    string;
 }
 
 export interface FixedHeight {
-    height:    string;
-    width:     string;
-    size:      string;
-    url:       string;
-    mp4_size?: string;
-    mp4?:      string;
-    webp_size: string;
-    webp:      string;
-    frames?:   string;
-    hash?:     string;
+  frames?:   string;
+  hash?:     string;
+  height:    string;
+  mp4_size?: string;
+  mp4?:      string;
+  size:      string;
+  url:       string;
+  webp_size: string;
+  webp:      string;
+  width:     string;
 }
 
 export interface Looping {
-    mp4_size: string;
-    mp4:      string;
+  mp4_size: string;
+  mp4:      string;
 }
 
 export enum Rating {
-    G = "g",
-    PG = "pg",
+  G = "g",
+  PG = "pg",
 }
 
 export enum Type {
-    GIF = "gif",
+  GIF = "gif",
 }
 
 export interface Meta {
-    status:      number;
-    msg:         string;
-    response_id: string;
+  msg:         string;
+  response_id: string;
+  status:      number;
 }
 
 export interface Pagination {
-    total_count: number;
-    count:       number;
-    offset:      number;
+  count:       number;
+  offset:      number;
+  total_count: number;
 }

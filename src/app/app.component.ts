@@ -2,16 +2,16 @@
 import { Component } from '@angular/core';
 
 // Componentes.
-import { GifsComponent } from './pages/gifs/gifs.component';
+import { GifsComponent } from './components/gifs/gifs.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
-    standalone: true,
-    imports: [ GifsComponent, SidebarComponent ]
+  imports: [ GifsComponent, SidebarComponent ],
+  selector: 'app-root',
+  standalone: true,
+  styleUrls: ['./app.component.scss'],
+  templateUrl: './app.component.html',
 })
 export class AppComponent { }
