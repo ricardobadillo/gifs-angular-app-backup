@@ -1,4 +1,4 @@
-<div class="h-full sm:w-80 max-w-40 w-60" [ngClass]="history.length > 0 ? 'shadow': ''">
+<div class="h-full sm:w-80 max-w-40 w-60" [ngClass]="gifHistory.length > 0 ? 'shadow': ''">
   <header class="bg-slate-800 px-4 py-3">
     <h1 class="font-semibold my-0 text-xl text-white"> Gifs-App </h1>
   </header>
@@ -7,10 +7,10 @@
 
   <div class="flex flex-col px-4">
       <a
-        *ngFor="let item of history"
+        *ngFor="let item of gifHistory"
         class="border-b-2 mt-4"
         href="#"
-        (click)=search(item)
+        (click)=searchGif(item)
       >
         {{ item | titlecase }}
       </a>

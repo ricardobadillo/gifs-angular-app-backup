@@ -13,16 +13,17 @@ import { GifsService } from 'src/app/core/services/gifs.service';
 })
 export class SearchComponent {
 
-  @ViewChild('textSearch') textSearch!:ElementRef<HTMLInputElement>;
+  @ViewChild('textSearch') textSearch!: ElementRef<HTMLInputElement>;
 
 
   constructor(private gifsService: GifsService) {}
 
-  searchGif(textSearch: string): void {
+  searchGif(): void {
+    let textSearch = this.textSearch.nativeElement.value;
 
     if (textSearch.trim().length === 0) return;
 
     this.gifsService.searchGif(textSearch);
-    this.textSearch.nativeElement.value = '';
+    textSearch = '';
   }
 }

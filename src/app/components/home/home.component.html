@@ -1,0 +1,9 @@
+<div class="mx-auto w-11/12">
+  <app-search class="block"/>
+
+  <div class="flex flex-wrap sm:gap-4 sm:grid sm:grid-cols-3 my-4">
+    <ng-container *ngFor="let gif of results">
+      <app-gif [gif]="gif"/>
+    </ng-container>
+  </div>
+</div>

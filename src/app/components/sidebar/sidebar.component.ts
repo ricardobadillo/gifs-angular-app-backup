@@ -17,11 +17,11 @@ export class SidebarComponent {
 
   gifsService = inject(GifsService);
 
-  get history(): Array<string> {
-    return this.gifsService.history;
+  get gifHistory(): Array<string> {
+    return this.gifsService.gifHistory;
   }
 
-  search(searchWord: string): void {
+  searchGif(searchWord: string): void {
     return this.gifsService.searchGif(searchWord);
   }
 }
